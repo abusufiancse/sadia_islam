@@ -85,3 +85,39 @@ if (form && note){
     form.reset();
   });
 }
+
+
+// === Highlight active nav item on scroll
+const sections = ['home','about','publications','skills','projects','contact']
+  .map(id => document.getElementById(id))
+  .filter(Boolean);
+
+const navLinks = Array.from(document.querySelectorAll('#nav a'));
+
+function setActive(hash){
+  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === hash));
+}
+
+if (sections.length && navLinks.length){
+  // Initial state
+  setActive('#home');
+
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const id = '#' + entry.target.id;
+        setActive(id);
+      }
+    });
+  },{
+    rootMargin: '-45% 0px -50% 0px', // middle of viewport
+    threshold: 0.01
+  });
+
+  sections.forEach(s => obs.observe(s));
+
+  // Also update on click
+  navLinks.forEach(a=>{
+    a.addEventListener('click', ()=> setActive(a.getAttribute('href')));
+  });
+}
