@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sadia Islam - Data Analyst Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="nav-logo">SI</span>
+                <span class="nav-name">Sadia Islam</span>
+            </div>
+            <!-- Changed navigation links to use explicit button styling -->
+            <div class="nav-menu" id="navMenu">
+                <button type="button" class="nav-button" onclick="scrollToSection('home')">Home</button>
+                <button type="button" class="nav-button" onclick="scrollToSection('about')">About</button>
+                <button type="button" class="nav-button" onclick="scrollToSection('publications')">Publications</button>
+                <button type="button" class="nav-button" onclick="scrollToSection('skills')">Skills</button>
+                <button type="button" class="nav-button" onclick="scrollToSection('projects')">Projects</button>
+                <button type="button" class="nav-button" onclick="scrollToSection('contact')">Contact</button>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span>Hi, I'm </span>
+                        <span class="text-primary">Sadia Islam</span>
+                    </h1>
+                    <p class="hero-subtitle">Data Analyst & Machine Learning Researcher</p>
+                    <p class="hero-description">
+                        Currently interning at Dream 71 Bangladesh Limited, specializing in machine learning, data visualization,
+                        and explainable AI with published research in medical data analysis.
+                    </p>
+                </div>
+                
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="scrollToSection('about')">
+                        View My Work
+                        <i class="fas fa-arrow-down"></i>
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-download"></i>
+                        Download CV
+                    </button>
+                    <button class="btn btn-outline" onclick="scrollToSection('contact')">
+                        <i class="fas fa-envelope"></i>
+                        Contact Me
+                    </button>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">Publications</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">3.45</div>
+                        <div class="stat-label">CGPA</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">ML Projects</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-description">
+                    Passionate about transforming data into actionable insights and advancing healthcare through AI
+                </p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-card">
+                        <h3>Education</h3>
+                        <div class="education-item">
+                            <h4>B.Sc in Computer Science and Engineering</h4>
+                            <p class="institution">Daffodil International University</p>
+                            <p class="duration">Jan 2021 - Jan 2025</p>
+                            <p class="grade">CGPA: 3.45/4.00</p>
+                        </div>
+                        <div class="education-item">
+                            <h4>Higher Secondary Certificate</h4>
+                            <p class="institution">Afaiuddin Memorial College</p>
+                            <p class="duration">July 2018 - July 2020</p>
+                            <p class="grade">GPA: 4.67/5.00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-card">
+                        <h3>Current Role</h3>
+                        <div class="role-item">
+                            <h4>Data Analyst Intern</h4>
+                            <p class="company">Dream 71 Bangladesh Limited</p>
+                            <p class="duration">July 27, 2025 - Present</p>
+                            <p class="description">
+                                Working on data analysis projects, developing machine learning models, 
+                                and creating data visualizations to support business decisions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="publications">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Publications</h2>
+                <p class="section-description">
+                    Research contributions in machine learning and healthcare data analysis
+                </p>
+            </div>
+            
+            <div class="publications-grid">
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <h3>A Precise Machine Learning Model: Detecting Cervical Cancer Using Feature Selection and Explainable AI</h3>
+                        <span class="publication-date">September 2024</span>
+                    </div>
+                    <p class="publication-journal">Journal of Pathology Informatics</p>
+                    <p class="publication-description">
+                        Developed a feature-selected ML model to classify the risk of cervical cancer from medical data.
+                        Applied scikit-learn and SHAP for model development and explainability.
+                    </p>
+                    <div class="publication-actions">
+                        <a href="https://doi.org/10.1016/j.jpi.2024.100398" target="_blank" class="btn btn-outline btn-sm">
+                            <i class="fas fa-external-link-alt"></i>
+                            View Paper
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <h3>Tree Leaf Classification Dataset</h3>
+                        <span class="publication-date">December 2024</span>
+                    </div>
+                    <p class="publication-journal">Mendeley Data</p>
+                    <p class="publication-description">
+                        Collected and labeled tree leaf images to support deep learning classification research.
+                        Comprehensive dataset for computer vision applications in botanical classification.
+                    </p>
+                    <div class="publication-actions">
+                        <a href="https://data.mendeley.com/datasets/bgmftbm8zt/2" target="_blank" class="btn btn-outline btn-sm">
+                            <i class="fas fa-database"></i>
+                            View Dataset
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <p class="section-description">
+                    Technical skills and tools I use to solve complex data problems
+                </p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">LaTeX</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>AI/ML Technologies</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Machine Learning</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Deep Learning</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">NLP</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Explainable AI</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Frameworks & Libraries</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">Keras</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">NLTK</span>
+                        <span class="skill-tag">Hugging Face</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Tools & Software</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Jupyter Notebook</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Microsoft Office</span>
+                        <span class="skill-tag">Google Sheets</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Projects</h2>
+                <p class="section-description">
+                    Showcasing my work in data analysis, machine learning, and web development
+                </p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Online Tutorial Finder</h3>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Developed a web application that helps students find tutors based on their location and subject input.
+                        Built with PHP and MySQL to provide efficient matching between students and tutors.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Web Development</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Cervical Cancer Detection Model</h3>
+                    </div>
+                    <p class="project-description">
+                        Machine learning model for cervical cancer risk classification using feature selection and explainable AI.
+                        Published research with SHAP integration for model interpretability.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">SHAP</span>
+                        <span class="tech-tag">Healthcare AI</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Tree Leaf Classification</h3>
+                    </div>
+                    <p class="project-description">
+                        Deep learning project for botanical classification using computer vision.
+                        Created comprehensive dataset and implemented CNN models for accurate leaf species identification.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Deep Learning</span>
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">Dataset Creation</span>
+                        <span class="tech-tag">CNN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-description">
+                    Let's discuss opportunities in data analysis, machine learning, or research collaboration
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <p class="contact-label">Email</p>
+                                <a href="mailto:sadia15-3980@diu.edu.bd" class="contact-value">sadia15-3980@diu.edu.bd</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <p class="contact-label">Phone</p>
+                                <a href="tel:+8801830358630" class="contact-value">+880 1830358630</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <p class="contact-label">Location</p>
+                                <p class="contact-value">Mirpur-1, Dhaka, Bangladesh</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <h4>Connect With Me</h4>
+                        <div class="social-items">
+                            <a href="https://linkedin.com/in/sadiaislamcse" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/sadiaislamcse" target="_blank" class="social-link">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <div class="contact-form-card">
+                        <h3>Send Me a Message</h3>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Name *</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                                <i class="fas fa-paper-plane"></i>
+                                <span id="btnText">Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Sadia Islam. Built with HTML, CSS, and JavaScript. Hosted on GitHub.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
