@@ -478,7 +478,9 @@ body{
 .lead-list li{ margin:6px 0; }
 
 
-/* === contact === */
+/* === Contact (cards + form, loading state) === */
+.contact-section { background: var(--bg-alt); }
+
 .contact-cards {
   display: grid;
   gap: 16px;
@@ -505,9 +507,72 @@ body{
   background: rgba(16,185,129,.15);
   font-size: 18px; color: #059669;
 }
-
 .contact-card.between { justify-content: space-between; }
 .contact-card .left { display:flex; align-items:center; gap:10px; }
 
+.subhead { margin: 24px 0 12px; font-size: 18px; color: var(--text); }
+
 .quick-actions { display: flex; gap: 12px; }
 .btn.small { padding: 6px 12px; font-size: 13px; }
+
+/* Minimal left contact panel (no heavy cards) */
+.info-panel{ padding: 4px 0; }
+.contact-list{ list-style:none; margin:0 0 16px; padding:0; }
+
+.contact-row{
+  display:flex; align-items:center; gap:12px;
+  padding:10px 0;
+  border-bottom:1px solid var(--border);
+}
+.contact-row:first-child{ border-top:1px solid var(--border); }
+.contact-row.between{ justify-content:space-between; }
+.contact-row .left{ display:flex; align-items:center; gap:12px; }
+
+.ico{
+  width:28px; height:28px; border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+  background: rgba(124,156,255,.12);
+  color: var(--brand); font-size:16px;
+}
+
+.row-title{ color: var(--text); font-weight:600; line-height:1.2; }
+.row-sub{ color: var(--muted); font-size:14px; }
+
+.link-chip{
+  padding:6px 10px; border-radius:8px;
+  border:1px solid var(--border); color:var(--text);
+  text-decoration:none; font-size:13px;
+}
+
+.inline-actions{ display:flex; gap:12px; }
+
+
+
+/* form card tweaks */
+.form-card .card-title{
+  font-size: 18px;
+  font-weight: 700;
+}
+.form-card .card-body{
+  padding: 16px;
+}
+.form-card .contact-form label{
+  color: var(--text); /* override muted color from .card-body */
+}
+.form-card .contact-form .btn{
+  width: 100%; /* full-width send button */
+}
+
+
+/* Button loading state */
+.btn.loading { position: relative; pointer-events: none; opacity: .8; }
+.btn.loading .btn-label { visibility: hidden; }
+.btn.loading::after{
+  content: "";
+  position:absolute; inset:0; margin:auto;
+  width:18px; height:18px; border-radius:50%;
+  border:3px solid rgba(255,255,255,.4);
+  border-top-color:#fff;
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }

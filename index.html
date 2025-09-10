@@ -22,7 +22,7 @@
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#publications">Publications</a>
-        <a href="#contact" class="btn">Contact</a>
+        <a href="#contact" class="btn">Hired Me</a>
       </nav>
       <button id="navToggle" class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -49,7 +49,7 @@
         </div>
         <div class="hero-media">
           <div class="avatar">
-            <img src="assets/placeholder-user.jpg" alt="Sadia portrait" onerror="this.src='assets/placeholder.jpg'">
+            <img src="assets/sadia.png" alt="Sadia portrait" onerror="this.src='assets/placeholder.jpg'">
           </div>
         </div>
       </div>
@@ -346,20 +346,6 @@
   </div>
 </section>
 
-
-    <!-- PUBLICATIONS -->
-    <section id="publications" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Publications</h2>
-          <p>Selected papers & write‑ups.</p>
-        </div>
-        <ul class="pub-list" id="pubList">
-          <!-- Publications injected by JS -->
-        </ul>
-      </div>
-    </section>
-
     <!-- ADDITIONAL COMPETENCIES -->
 <section id="competencies" class="section competencies-section">
   <div class="container">
@@ -419,77 +405,110 @@
   </div>
 </section>
 
-<div class="grid two">
-  <!-- Left column: contact info -->
-  <div>
-    <h3 class="subhead">Contact Information</h3>
-    <div class="contact-cards">
-      <div class="contact-card">
-        <div class="icon">✉️</div>
-        <div>
-          <h4>Email</h4>
-          <p>sadia15-3980@diu.edu.bd</p>
-        </div>
-      </div>
-
-      <div class="contact-card">
-        <div class="icon">📞</div>
-        <div>
-          <h4>Phone</h4>
-          <p>+880 1830358630</p>
-        </div>
-      </div>
-
-      <div class="contact-card">
-        <div class="icon">📍</div>
-        <div>
-          <h4>Location</h4>
-          <p>Mirpur-1, Dhaka, Bangladesh</p>
-        </div>
-      </div>
+<!-- CONTACT -->
+<section id="contact" class="section contact-section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Get In Touch</h2>
+      <p>Feel free to reach out for collaborations or just a friendly hello 👋</p>
     </div>
 
-    <h3 class="subhead">Connect With Me</h3>
-    <div class="contact-cards">
-      <div class="contact-card between">
-        <div class="left">
-          <div class="icon">🔗</div>
-          <div>
-            <h4>LinkedIn</h4>
-            <p>@sadiaislamcse</p>
-          </div>
-        </div>
-        <a href="https://linkedin.com/in/sadiaislamcse" target="_blank" class="btn small">Connect</a>
+    <div class="grid two">
+<!-- Left column: minimal contact panel -->
+<div class="info-panel">
+  <h3 class="subhead">Contact Information</h3>
+  <ul class="contact-list">
+    <li class="contact-row">
+      <span class="ico">✉️</span>
+      <div>
+        <div class="row-title">Email</div>
+        <div class="row-sub">sadia15-3980@diu.edu.bd</div>
       </div>
-
-      <div class="contact-card between">
-        <div class="left">
-          <div class="icon">💻</div>
-          <div>
-            <h4>GitHub</h4>
-            <p>@sadiaislamcse</p>
-          </div>
-        </div>
-        <a href="https://github.com/sadiaislamcse" target="_blank" class="btn small">Connect</a>
+    </li>
+    <li class="contact-row">
+      <span class="ico">📞</span>
+      <div>
+        <div class="row-title">Phone</div>
+        <div class="row-sub">+880 1830358630</div>
       </div>
-    </div>
+    </li>
+    <li class="contact-row">
+      <span class="ico">📍</span>
+      <div>
+        <div class="row-title">Location</div>
+        <div class="row-sub">Mirpur-1, Dhaka, Bangladesh</div>
+      </div>
+    </li>
+  </ul>
 
-    <h3 class="subhead">Quick Actions</h3>
-    <div class="quick-actions">
-      <a class="btn" href="mailto:sadia15-3980@diu.edu.bd">Send Email</a>
-      <a class="btn ghost" href="#">Schedule Call</a>
+  <h3 class="subhead">Connect With Me</h3>
+  <ul class="contact-list">
+    <li class="contact-row between">
+      <div class="left">
+        <span class="ico">🔗</span>
+        <div>
+          <div class="row-title">LinkedIn</div>
+          <div class="row-sub">@sadiaislamcse</div>
+        </div>
+      </div>
+      <a href="https://linkedin.com/in/sadiaislamcse" target="_blank" class="link-chip">Connect</a>
+    </li>
+
+    <li class="contact-row between">
+      <div class="left">
+        <span class="ico">💻</span>
+        <div>
+          <div class="row-title">GitHub</div>
+          <div class="row-sub">@sadiaislamcse</div>
+        </div>
+      </div>
+      <a href="https://github.com/sadiaislamcse" target="_blank" class="link-chip">Connect</a>
+    </li>
+  </ul>
+
+  <h3 class="subhead">Quick Actions</h3>
+  <div class="inline-actions">
+    <a class="btn" href="mailto:sadia15-3980@diu.edu.bd">Send Email</a>
+    <a class="btn ghost" href="#">Schedule Call</a>
+  </div>
+</div>
+
+
+
+
+      <!-- Right column: contact form -->
+<div class="card form-card">
+  <div class="card-title">Send Me a Message</div>
+  <div class="card-body">
+    <form class="contact-form" id="contactForm">
+      <label>Name
+        <input required type="text" name="name" placeholder="Your name">
+      </label>
+
+      <label>Email
+        <input required type="email" name="email" placeholder="you@example.com">
+      </label>
+
+      <label>Message
+        <textarea required name="message" rows="6" placeholder="Write your message..."></textarea>
+      </label>
+
+      <button class="btn" id="contactSubmit" type="submit">
+        <span class="btn-label">Send Message</span>
+      </button>
+
+      <p class="form-note" id="formNote" hidden>Thanks! Your message was sent.</p>
+    </form>
+  </div>
+</div>
+
     </div>
   </div>
+</section>
 
-  <!-- Right column: contact form -->
-  <form class="contact-form" id="contactForm">
-    <label>Name<input required type="text" name="name" placeholder="Your name"></label>
-    <label>Email<input required type="email" name="email" placeholder="you@example.com"></label>
-    <label>Message<textarea required name="message" rows="5" placeholder="Write your message..."></textarea></label>
-    <button class="btn" type="submit">Send Message</button>
-    <p class="form-note" id="formNote" hidden>Thanks! Your message was “sent” (demo).</p>
-  </form>
-</div>
+<!-- SweetAlert2 (toast) -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
   </main>
 
