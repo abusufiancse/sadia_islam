@@ -121,3 +121,90 @@ if (sections.length && navLinks.length){
     a.addEventListener('click', ()=> setActive(a.getAttribute('href')));
   });
 }
+
+
+// === Hero title letter animation ===
+(function(){
+  const el = document.getElementById('heroTitle');
+  if(!el) return;
+  const fullText = el.textContent.trim();
+  const name = el.dataset.name || "Sadia Islam";
+  const nameStart = fullText.indexOf(name);
+  el.innerHTML = ""; // rebuild with span chars
+
+  function spanify(text, isAccent){
+    return text.split("").map(ch => {
+      const s = document.createElement('span');
+      s.className = 'char' + (isAccent ? ' accent' : '');
+      if(isAccent) s.style.color = 'var(--green)';
+      s.textContent = ch;
+      el.appendChild(s);
+      return s;
+    });
+  }
+  const before = fullText.slice(0, Math.max(0,nameStart));
+  const namePart = nameStart >= 0 ? fullText.slice(nameStart, nameStart + name.length) : "";
+  const after = nameStart >= 0 ? fullText.slice(nameStart + name.length) : fullText;
+
+  const chars = [
+    ...spanify(before, false),
+    ...spanify(namePart, true),
+    ...spanify(after, false)
+  ];
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        chars.forEach((c,i)=> setTimeout(()=> c.classList.add('in'), i*18));
+        // gentle reveal for chips & ctas
+        document.querySelectorAll('.hero-specialties, .hero-v2-ctas').forEach((n,idx)=>{
+          n.style.opacity = 0; n.style.transform = 'translateY(10px)';
+          setTimeout(()=>{ n.style.transition='all .35s ease'; n.style.opacity=1; n.style.transform='none'; }, 350 + idx*120);
+        });
+        io.disconnect();
+      }
+    });
+  }, {threshold: 0.4});
+  io.observe(el);
+})();
+
+
+// === Hero title letter animation (accent name) ===
+(function(){
+  const el = document.getElementById('heroTitle');
+  if(!el) return;
+  const fullText = el.textContent.trim();
+  const name = el.dataset.name || "Sadia Islam";
+  const nameStart = fullText.indexOf(name);
+  el.innerHTML = "";
+
+  function makeSpan(ch, isAccent){
+    const s = document.createElement('span');
+    s.className = 'char' + (isAccent ? ' accent' : '');
+    s.textContent = ch;
+    el.appendChild(s);
+    return s;
+  }
+
+  const before = fullText.slice(0, Math.max(0,nameStart));
+  const namePart = nameStart >= 0 ? fullText.slice(nameStart, nameStart + name.length) : "";
+  const after = nameStart >= 0 ? fullText.slice(nameStart + name.length) : fullText;
+
+  const chars = [];
+  [...before].forEach(c => chars.push(makeSpan(c,false)));
+  [...namePart].forEach(c => chars.push(makeSpan(c,true)));
+  [...after].forEach(c => chars.push(makeSpan(c,false)));
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        chars.forEach((c,i)=> {
+          c.style.opacity = 0; c.style.transform = 'translateY(24px)';
+          setTimeout(()=>{ c.style.transition='transform .5s cubic-bezier(.2,.8,.2,1), opacity .5s ease'; c.style.opacity=1; c.style.transform='none'; }, 16*i);
+        });
+        io.disconnect();
+      }
+    });
+  }, {threshold: 0.4});
+  io.observe(el);
+})();
